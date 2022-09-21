@@ -1,7 +1,7 @@
 <!-- Template for displaying archive pages -->
 <?php get_header(); ?>
 <div id="primary" class="content-area">
-    <div id="main" class="site-main">
+    <main id="main" class="site-main">
         <?php if(have_posts( )): ?>
             <header class="archive-page-header">
                 <?php 
@@ -21,11 +21,11 @@
                         'next_text' => esc_html__('Selanjutnya', 'firstwp')
                     ]
                 );
-            else : 
+        else : 
                 get_template_part('template-parts/page/content', 'none');
-            ?>
+        ?>
 
         <?php endif ?>
-    </div>
+    </main>
 </div>
 <?php get_footer(); ?>
