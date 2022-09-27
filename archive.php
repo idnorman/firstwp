@@ -24,7 +24,7 @@
         else : 
                 get_template_part('template-parts/page/content', 'none');
         ?>
-
+        <?php get_sidebar(); ?>
         <?php endif ?>
     </main>
 </div>
