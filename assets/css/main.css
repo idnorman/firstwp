@@ -3281,3 +3281,23 @@
         background: var(--color-primary);
         text-decoration: none;
     }
+
+    /* Custom CSS */
+    .header_menu_action li{
+        list-style-type: none;
+    }
+    .header_menu_action li a, .header_menu_action li a:focus{
+        font-size: 16px;
+        color: var(--color-white);
+        background: var(--color-primary);
+        padding: 8px 23px;
+        border-radius: 4px;
+        transition: 0.3s;
+        font-family: var(--font-secondary);
+    }
+
+    .header_menu_action li a:hover,
+    .header_menu_action li a:focus:hover {
+        color: var(--color-white);
+        background: rgba(var(--color-primary-rgb), 0.85);
+    }

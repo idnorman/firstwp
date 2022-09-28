@@ -36,7 +36,24 @@
         ?>
 
         <nav id="navbar" class="navbar">
-            <ul>
+            <?php 
+                if(has_nav_menu('primary' )):
+                    wp_nav_menu([
+                        'theme_location'    => 'primary',
+                        'container'         => false,
+                        'menu_class'        => '',
+                        'menu_id'           => '',
+                        'depth'             => 3,
+                    ]);
+                else:
+                    printf(
+                        '<a href="%1$s">%2$s</a>',
+                        esc_url(admin_url('/nav-menus.php')),
+                        esc_html__('Assign a menu', 'firstwp')
+                    );
+                endif;
+            ?>
+            <!-- <ul>
 
             <li class="dropdown"><a href="#"><span>Home</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
@@ -94,11 +111,27 @@
                 </ul>
             </li>
             <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
-            </ul>
+            </ul> -->
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
         </nav><!-- .navbar -->
 
-        <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a>
+        <?php 
+                if(has_nav_menu('header_action' )):
+                    wp_nav_menu([
+                        'theme_location'    => 'header_action',
+                        'container'         => false,
+                        'menu_class'        => 'header_menu_action',
+                        'menu_id'           => '',
+                        'depth'             => 3,
+                    ]);
+                else:
+                    printf(
+                        '<a class="btn-getstarted scrollto" href="%1$s">%2$s</a>',
+                        esc_url(admin_url('/nav-menus.php')),
+                        esc_html__('Action Menu', 'firstwp')
+                    );
+                endif;
+        ?>
 
         </div>
     </header><!-- End Header -->

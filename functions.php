@@ -35,7 +35,8 @@
 
             register_nav_menus(array(
                 'primary'   => esc_html__('Primary', 'firstwp'),
-                'footer'    => esc_html__('Footer Menu', 'firstwp')
+                'footer'    => esc_html__('Footer Menu', 'firstwp'),
+                'header_action' => esc_html__('Header Action','firstwp')
             ));
 
         }
